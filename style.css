@@ -1,0 +1,215 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#000;
+color:#eee;
+overflow:hidden;
+}
+
+/* Automotive BG */
+.bg-grid{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url("bg.png") center/cover no-repeat;
+z-index:-3;
+}
+
+/* Orange Glass */
+.glass{
+position:fixed;
+width:600px;
+height:600px;
+background:radial-gradient(circle,rgba(255,122,24,.6),transparent 70%);
+filter:blur(120px);
+z-index:-1;
+}
+
+.glass-1{top:-200px;left:-200px;}
+.glass-2{bottom:-200px;right:-200px;}
+
+/* Loader */
+#loader{
+height:100vh;
+display:grid;
+place-content:center;
+gap:22px;
+}
+
+.speedometer{
+width:220px;
+height:110px;
+border:6px solid #ff7a18;
+border-bottom:none;
+border-radius:220px 220px 0 0;
+position:relative;
+}
+
+.needle{
+width:5px;
+height:95px;
+background:#ff7a18;
+position:absolute;
+bottom:0;
+left:50%;
+transform-origin:bottom;
+animation:rev 1.6s ease-in-out infinite;
+}
+
+@keyframes rev{
+0%{transform:rotate(-65deg);}
+50%{transform:rotate(65deg);}
+100%{transform:rotate(-65deg);}
+}
+
+#loader p{
+color:#ff7a18;
+font-weight:800;
+letter-spacing:2px;
+font-size:1rem;
+}
+
+.hidden{display:none;}
+
+/* Main Full Screen Center */
+main{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+gap:26px;
+padding:40px 20px;
+}
+
+/* Brand */
+.brand{
+margin-bottom:10px;
+}
+
+.logo{
+width:120px;
+margin-bottom:18px;
+}
+
+.bolt-animate{
+animation:boltFlash 1.4s ease-out forwards;
+}
+
+@keyframes boltFlash{
+0%{transform:scale(.7);filter:brightness(0);}
+40%{transform:scale(1.1);filter:brightness(2);}
+100%{transform:scale(1);filter:brightness(1);}
+}
+
+.brand-title{
+font-size:3.5rem;
+font-weight:900;
+letter-spacing:3px;
+color:#ff7a18;
+line-height:1;
+}
+
+.brand-title span{
+display:block;
+font-size:1.6rem;
+letter-spacing:8px;
+color:#fff;
+opacity:.85;
+margin-top:6px;
+}
+
+/* Main Text */
+main p{
+opacity:.75;
+font-size:1.1rem;
+line-height:1.6;
+max-width:520px;
+}
+
+/* Footer */
+.footer{
+margin-top:30px;
+}
+
+.bharat-badge{
+display:inline-block;
+padding:10px 22px;
+border-radius:30px;
+background:linear-gradient(90deg,#ff7a18,#ffb347);
+color:#111;
+font-weight:900;
+letter-spacing:.6px;
+font-size:.9rem;
+}
+
+/* Modal (unused now but kept safe) */
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+display:flex;
+justify-content:center;
+align-items:center;
+visibility:hidden;
+opacity:0;
+transition:.2s;
+padding:16px;
+}
+
+.modal.show{
+visibility:visible;
+opacity:1;
+}
+
+.modal-content{
+background:#111;
+padding:22px;
+border-radius:14px;
+width:100%;
+max-width:400px;
+}
+
+.modal-content h2{
+color:#ff7a18;
+margin-bottom:10px;
+}
+
+.close{
+float:right;
+font-size:22px;
+cursor:pointer;
+}
+
+/* Mobile */
+@media(max-width:600px){
+
+.brand-title{
+font-size:2.6rem;
+}
+
+.brand-title span{
+font-size:1.2rem;
+}
+
+.logo{
+width:90px;
+}
+
+.speedometer{
+width:170px;
+height:85px;
+}
+
+.needle{
+height:75px;
+}
+
+}
